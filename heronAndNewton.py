@@ -16,7 +16,17 @@ def heron(x, accuracy = 0.001):
       g = 0.5*(g + (x/g))
   return g
 
-def newton(x, accuracy = 0.001):
+def newton3(x, accuracy = 0.001):
+  """Finds the cube root of a number based off Newton's
+   method""" 
+  g = x / 2
+  while abs((g**3) - x) > accuracy:
+    g = g - (((g**3) - x) / (3 * (g**2)))
+  return g
+
+def newton2(x, accuracy = 0.001):
+  """Finds the square root of a number based off Newton's
+   method""" 
   g = x / 2
   while abs((g**2) - x) > accuracy:
     g = g - (((g**2) - x) / (2 * g))
